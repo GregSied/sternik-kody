@@ -6,5 +6,6 @@ public class InnaKlasa {
 		Animal animal = new Animal();
 		animal.wydajDzwiek();
 		new Animal();
+		// nowa linijka
 	}
 }
