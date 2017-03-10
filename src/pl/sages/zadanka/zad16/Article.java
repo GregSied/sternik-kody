@@ -25,6 +25,7 @@ public class Article {
 
 	public void setIdentyfikatorLiczbowy(int identyfikatorLiczbowy) {
 		this.identyfikatorLiczbowy = identyfikatorLiczbowy;
+		printChange();
 	}
 
 	public String getNaz() {
@@ -33,6 +34,7 @@ public class Article {
 
 	public void setNaz(String naz) {
 		this.nazwa = naz;
+		printChange();
 	}
 
 	public String getOpis() {
@@ -41,6 +43,11 @@ public class Article {
 
 	public void setOpis(String opis) {
 		this.opis = opis;
+		printChange();
+	}
+	
+	private void printChange(){
+		System.out.println("Zmieniono wartość pola");
 	}
 	
 	@Override
