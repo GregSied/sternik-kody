@@ -1,4 +1,4 @@
-package pl.sages.zadanka;
+package pl.sages.zadanka.zad07;
 
 public class Zadanie7 {
 	

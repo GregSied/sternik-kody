@@ -1,4 +1,4 @@
-package pl.sages.zadanka;
+package pl.sages.zadanka.zad11;
 
 public enum Zamowienie {
 	

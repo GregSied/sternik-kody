@@ -1,4 +1,4 @@
-package pl.sages.zadanka;
+package pl.sages.zadanka.zad06;
 
 public class Zadanie6 {
 
@@ -42,9 +42,9 @@ public class Zadanie6 {
 		System.out.println("\nna FOR:");
 
 		if (ii == 1 && nazwa.endsWith("EK")) {
-			System.out.println("DZIA≈ÅAM!!");
+			System.out.println("DZIA≈?AM!!");
 		} else {
-			System.out.println("DZIA≈ÅAM2222!!");
+			System.out.println("DZIA≈?AM2222!!");
 		}
 
 		if (printArg(false) && printArg(true)) {
@@ -55,8 +55,8 @@ public class Zadanie6 {
 		
 		int i = 8, j = 2;
 		
-		String kon = (i < 2) ? "≈Åysek" : (i < 7) ? "≈Åysek2" : "Bucefa≈Ç";
-		System.out.println("KO≈É: " + kon);
+		String kon = (i < 2) ? "≈?ysek" : (i < 7) ? "≈?ysek2" : "Bucefa≈Ç";
+		System.out.println("KO≈?: " + kon);
 		
 		
 		
