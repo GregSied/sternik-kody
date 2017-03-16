@@ -1,6 +1,9 @@
 package pl.sages.zadanka.zad26;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Formatter;
+import java.util.Iterator;
 import java.util.List;
 
 public class Article {
@@ -96,6 +99,56 @@ public class Article {
 
 	public void setCena(double cena) {
 		this.cena = cena;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(cena);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + identyfikatorLiczbowy;
+		result = prime * result + ((nazwa == null) ? 0 : nazwa.hashCode());
+		result = prime * result + ((opis == null) ? 0 : opis.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Article other = (Article) obj;
+		if (Double.doubleToLongBits(cena) != Double.doubleToLongBits(other.cena))
+			return false;
+		if (identyfikatorLiczbowy != other.identyfikatorLiczbowy)
+			return false;
+		if (nazwa == null) {
+			if (other.nazwa != null)
+				return false;
+		} else if (!nazwa.equals(other.nazwa))
+			return false;
+		if (opis == null) {
+			if (other.opis != null)
+				return false;
+		} else if (!opis.equals(other.opis))
+			return false;
+		return true;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(new Formatter().format("%-15s%15s", "10", "199"));
+		System.out.println(new Formatter().format("%-15s%15s", "10000", "199000"));
+		
+		//System.arraycopy(src, srcPos, dest, destPos, length);
+		String[] array = null;
+		List<String> asList = Arrays.asList(array);
+		Iterator<String> iterator = asList.iterator();
+		
 	}
 	
 }
