@@ -1,6 +1,9 @@
 package pl.sages.zadanka.zad33;
 
-public class Person {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Person implements Comparable{
 
 	private String name;
 	private String surname;
@@ -74,7 +77,16 @@ public class Person {
 	}
 	
 	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", surname=" + surname + ", age=" + age + "]";
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Person person = (Person)o;
+		return this.surname.compareTo(person.surname);
+	}
 	
 }

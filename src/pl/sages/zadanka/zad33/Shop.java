@@ -1,6 +1,9 @@
 package pl.sages.zadanka.zad33;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,20 +43,58 @@ public class Shop {
 		}
 	}
 	
+	public Collection<Employee> getSortedEmployees(){
+		Collections.sort(employeeList);
+		return Collections.unmodifiableCollection(employeeList);
+	}
+	
+	public List<Employee> getSortedEmployeesById(){
+		Collections.sort(employeeList, new Comparator() {
+			@Override
+			public int compare(Object o1, Object o2) {
+				Employee a1 = (Employee)o1;
+				Employee a2 = (Employee)o2;
+				
+				return a1.getPracownikId().compareTo(a2.getPracownikId());
+			}
+		});
+		
+		return employeeList;
+	}
+	
 	public static void main(String[] args) {
 		Shop shop = new Shop();
+		shop.addEmployee(new Employee("Filip", "Zaradny", 20, 21));
 		shop.addEmployee(new Employee("Arek", "Cacko", 28, 20));
-		shop.addEmployee(new Employee("Filip", "Cacko", 20, 21));
 		
 		Employee filipClone = new Employee("Filip", "Cacko", 20, 21);
 		System.out.println("shop.hasEmployee=" + shop.hasEmployee(filipClone));
-		
+		Collection<Employee> sortedEmployees = shop.getSortedEmployees();
+		System.out.println("getSortedEmployees=" + sortedEmployees);
+		//sortedEmployees.add(new Employee("Bart³omiej", "Misiewicz", 20, 21));
+		System.out.println("getSortedEmployeesById=" + shop.getSortedEmployeesById());
+
 		Article apple = new Article(1, "Apple", "Gala");
 		shop.addArticle(apple);
 		shop.addArticle(new Article(1, "Apple", "Gala"));
 		
 		System.out.println("shop.getArticleQuantity(apple)=" 
 							+ shop.getArticleQuantity(apple));
+		
+		List<Person> list = new ArrayList<>();
+		list.add(new Person("Arek", "Cacko", 28));
+		list.add(new Person("Filip", "Komorowski", 40));
+		list.add(new Person("Bartek", "Misiewicz", 23));
+		list.add(new Person("Marek", "Kaczyñski", 60));
+		
+		System.out.println(list);
+		
+		Collections.sort(list);
+		
+		System.out.println(list);
+		
+		
+		
 	}
 	
 }

@@ -2,7 +2,7 @@ package pl.sages.zadanka.zad33;
 
 public class Employee extends Person {
 
-	private int pracownikId;
+	private Integer pracownikId;
 
 	public Employee(){}
 	
@@ -15,7 +15,7 @@ public class Employee extends Person {
 		this.pracownikId = pracownikId;
 	}
 
-	public int getPracownikId() {
+	public Integer getPracownikId() {
 		return pracownikId;
 	}
 
@@ -44,6 +44,12 @@ public class Employee extends Person {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [pracownikId=" + pracownikId + " " + super.toString() + "]";
+	}
+	
 	
 	
 	
