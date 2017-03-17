@@ -38,15 +38,16 @@ public class KolekcjeGeneryki {
 	}
 
 	void addPersonToList2(List<? extends Person> list) {
-		// list.add(new Person("Arek")); 		// błąd bo nie wiadomo czy to lista
+		//list.add(new Person("Arek")); 		// błąd bo nie wiadomo czy to lista
 										 		// VipPerson, Person, czy jakaś inna klasa dziedzicząca po Person :)
 		// list.add(new VipPerson("Arek", 1)); 	// też błąd
 	}
 
 	void addPersonToList3(List<? super VipPerson> list) {
-		// list.add(new Person("Arek")); 		// błąd. Co jeśli jest to List<VipPerson>? Wtedy nie można dodać Person
+		//list.add(new Person("Arek")); 		// błąd. Co jeśli jest to List<VipPerson>? Wtedy nie można dodać Person
 		list.add(new VipPerson("Arek", 1)); 	// ok
 		list.add(new SuperPerson("Arek")); 		// ok
+		//list.add(new Object()); 				// błąd
 		Object object = list.get(0); 			// typu Object. Nie wiemy jakiego typu jest
 												// obiekt w liście. Może VipPerson, może
 												// Person... kto wie!?
@@ -85,7 +86,7 @@ public class KolekcjeGeneryki {
 	// Skoro już wszystko wiemy no to podsumowanie wszystkiego:
 	public static void copy(List<? extends VipPerson> src, List<? super VipPerson> dest) {
 		for (int i = 0; i < src.size(); i++)
-			dest.set(i, src.get(i));
+			dest.add(src.get(i));
 	}
 	
 	

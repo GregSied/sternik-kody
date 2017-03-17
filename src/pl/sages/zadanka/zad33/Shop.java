@@ -1,5 +1,9 @@
 package pl.sages.zadanka.zad33;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -27,7 +31,7 @@ public class Shop {
 		boolean containsKey = productNumber.containsKey(article);
 		if(containsKey){
 			Integer integer = productNumber.get(article);
-			//integer.increment(); // nie da siê bo immutable
+			//integer.increment(); // nie da siï¿½ bo immutable
 			productNumber.put(article, (integer + 1));
 		} else {
 			productNumber.put(article, 1);
@@ -71,7 +75,7 @@ public class Shop {
 		System.out.println("shop.hasEmployee=" + shop.hasEmployee(filipClone));
 		Collection<Employee> sortedEmployees = shop.getSortedEmployees();
 		System.out.println("getSortedEmployees=" + sortedEmployees);
-		//sortedEmployees.add(new Employee("Bart³omiej", "Misiewicz", 20, 21));
+		//sortedEmployees.add(new Employee("Bartï¿½omiej", "Misiewicz", 20, 21));
 		System.out.println("getSortedEmployeesById=" + shop.getSortedEmployeesById());
 
 		Article apple = new Article(1, "Apple", "Gala");
@@ -85,15 +89,13 @@ public class Shop {
 		list.add(new Person("Arek", "Cacko", 28));
 		list.add(new Person("Filip", "Komorowski", 40));
 		list.add(new Person("Bartek", "Misiewicz", 23));
-		list.add(new Person("Marek", "Kaczyñski", 60));
+		list.add(new Person("Marek", "Kaczyï¿½ski", 60));
 		
 		System.out.println(list);
 		
 		Collections.sort(list);
 		
 		System.out.println(list);
-		
-		
 		
 	}
 	

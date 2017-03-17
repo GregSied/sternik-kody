@@ -4,6 +4,8 @@ public class Person implements Introducable{
 	
 	private String name;
 
+	public Person(){}
+	
 	public Person(String name) {
 		this.name = name;
 	}

@@ -4,6 +4,8 @@ public class VipPerson extends Person {
 	
 	private int cartId;
 
+	public VipPerson(){}
+	
 	public VipPerson(String name){
 		super(name);
 	}
